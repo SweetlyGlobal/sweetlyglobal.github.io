@@ -151,14 +151,15 @@
 </header>
 
 -->
-<button id="installButton" >Install App</button>
+<button id="installButton" style="display: none;" >Install App</button>
 <!-- This is the for the script code for the windows install code -->
 <script>
     // Register the service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./service-worker.js')
         .then(function(registration) {
-          alert('Service Worker registered with scope:'+ registration.scope);
+           // alert('Service Worker registered with scope:'+ registration.scope);
+          console.log('Service Worker registered with scope:', registration.scope);
         })
         .catch(function(error) {
           console.log('Service Worker registration failed:', error);
