@@ -1,0 +1,21 @@
+{
+    "name": "Sweetly Global",
+    "short_name": "Sweetly",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#317EFB",
+    "description": "An app for visiting and exploring the world of sweets.",
+    "icons": [
+      {
+        "src": "icon1.jpg",
+        "sizes": "192x192",
+        "type": "image/jpeg"
+      },
+      {
+        "src": "icon1.jpg",
+        "sizes": "512x512",
+        "type": "image/jpeg"
+      }
+    ]
+  }
