@@ -149,15 +149,16 @@
         <div></div>
     </div>
 </header>
+
 -->
-<button id="install" >Install App</button>
+<button id="installButton" >Install App</button>
 <!-- This is the for the script code for the windows install code -->
 <script>
     // Register the service worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('./service-worker.js')
         .then(function(registration) {
-          console.log('Service Worker registered with scope:', registration.scope);
+          alert('Service Worker registered with scope:'+ registration.scope);
         })
         .catch(function(error) {
           console.log('Service Worker registration failed:', error);
@@ -166,7 +167,7 @@
 
     // Handle the install prompt
     let deferredPrompt;
-    const installButton = document.getElementById('install');
+    const installButton = document.getElementById('installButton');
 
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
