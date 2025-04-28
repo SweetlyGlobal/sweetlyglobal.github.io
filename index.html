@@ -10,123 +10,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#317EFB"/>
 
-    <style>
-        /* ============================= */
-        /* General Page Styles */
-        /* ============================= */
-        body {
-            font-family: Arial, sans-serif; /* Set font */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            box-sizing: border-box; /* Include padding + border inside element's total width/height */
-            background-color: #f9f0dc; /* Light cream background */
-        }
-
-        /* ============================= */
-        /* Header Styles */
-        /* ============================= */
-        header {
-            background-color: white; /* White background for the header */
-            padding: 10px 0; /* Top and bottom padding */
-            /*position: fixed; /* Fix header at top */
-            width: 100%; /* Full width */
-            top: 0; /* Align to top */
-            left: 0; /* Align to left */
-            z-index: 1000; /* Keep header above other content */
-        }
-
-        /* Navbar container (desktop view) */
-        .navbar {
-            display: flex; /* Arrange items in a row */
-            justify-content: space-around; /* Evenly space links */
-            align-items: center; /* Center items vertically */
-        }
-
-        /* Navbar links (desktop view) */
-        .navbar a {
-            color: #616c98; /* Default link color */
-            text-decoration: none; /* No underline */
-            padding: 10px 20px; /* Padding around text */
-            font-size: 18px; /* Font size */
-        }
-
-        /* Hover effect on navbar links */
-        .navbar a:hover {
-            background-color: lightgrey; /* Light grey background on hover */
-            border-radius: 5px; /* Rounded corners on hover */
-        }
-
-        /* ============================= */
-        /* Burger Menu Styles (for mobile) */
-        /* ============================= */
-        .burger {
-            display: none; /* Hide burger by default (desktop) */
-            flex-direction: column; /* Stack the bars */
-            cursor: pointer; /* Pointer cursor on hover */
-        }
-
-        /* The three bars of the burger */
-        .burger div {
-            width: 50px; /* Width of each bar */
-            height: 10px; /* Height of each bar */
-            margin: 7px 0; /* Space between bars */
-            background-color: pink; /* Pink color for burger bars */
-            transition: 0.3s; /* Smooth animation */
-        }
-
-        /* ============================= */
-        /* Responsive Rules (Mobile View) */
-        /* ============================= */
-        @media (max-width: 768px) {
-            /* Hide navbar initially on mobile */
-            .navbar {
-                display: none; /* Hide menu */
-                flex-direction: column; /* Stack links vertically */
-                width: 100%; /* Full width */
-                text-align: center; /* Center text */
-                position: absolute; /* Absolute position over page */
-                top: 60px; /* Below header */
-                left: 0; /* Align left */
-                background-color: white; /* Background for dropdown */
-            }
-
-            /* Links inside navbar (mobile) */
-            .navbar a {
-                display: block; /* Each link on its own line */
-                padding: 10px; /* Padding for easier tapping */
-                border-top: 1px solid #575757; /* Divider line between links */
-                color: #9775ad; /* Change link color in burger menu */
-            }
-
-            /* Show burger menu icon */
-            .burger {
-                display: flex; /* Flex (show) */
-                position: absolute; /* Absolute positioning */
-                top: 15px; /* Distance from top */
-                right: 20px; /* Distance from right */
-            }
-
-            /* Show navbar when active */
-            .navbar.active {
-                display: flex; /* Flex container when burger clicked */
-            }
-
-            /* Burger animation when open */
-            .burger.open div:nth-child(1) {
-                transform: rotate(45deg); /* First bar rotate */
-                position: relative;
-                top: 7px;
-            }
-            .burger.open div:nth-child(2) {
-                opacity: 0; /* Hide middle bar */
-            }
-            .burger.open div:nth-child(3) {
-                transform: rotate(-45deg); /* Third bar rotate */
-                position: relative;
-                top: -7px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -149,61 +33,12 @@
         <div></div>
     </div>
 </header>
+<div class="body-content">
+    <button id="installButton" style="display: none;">Install App</button>
+</div>
 
 
-<button id="installButton" style="display: none;">Install App</button>
-<!-- This is the for the script code for the windows install code -->
-<script>
-    // Register the service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
-        .then(function(registration) {
-           // alert('Service Worker registered with scope:'+ registration.scope);
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(function(error) {
-          console.log('Service Worker registration failed:', error);
-        });
-    }
 
-    // Handle the install prompt
-    let deferredPrompt;
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    
-    // Show your "Install" button
-    document.getElementById('installButton').style.display = 'block';
-    });
-
-    document.getElementById('installButton').addEventListener('click', () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted install');
-        } else {
-            console.log('User dismissed install');
-        }
-        deferredPrompt = null;
-        });
-    }
-    });
-  </script>
-<!-- ============================= -->
-<!-- JavaScript for Burger Menu Toggle -->
-<!-- ============================= -->
-<script>
-    function toggleMenu() {
-        const navbar = document.querySelector('.navbar'); // Get navbar
-        const burger = document.querySelector('.burger'); // Get burger
-
-        // Toggle classes to open/close
-        navbar.classList.toggle('active');
-        burger.classList.toggle('open');
-    }
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>
