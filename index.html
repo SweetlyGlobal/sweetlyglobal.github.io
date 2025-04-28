@@ -142,7 +142,7 @@
         <a href="#about-us">About Us</a>
     </div>
 
-   
+    
     <div class="burger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -150,8 +150,7 @@
     </div>
 </header>
 -->
-version 2
-<button id="installButton" style="display: none;">Install App</button>
+<button id="install" >Install App</button>
 <!-- This is the for the script code for the windows install code -->
 <script>
     // Register the service worker
@@ -167,7 +166,7 @@ version 2
 
     // Handle the install prompt
     let deferredPrompt;
-    const installButton = document.getElementById('installButton');
+    const installButton = document.getElementById('install');
 
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
