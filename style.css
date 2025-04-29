@@ -65,6 +65,31 @@
            margin-top: 65px; /* Space below header */
         }
 
+        #installButton {
+            display: none; /* Initially hidden */
+            background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Gradient background */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 25px; /* Rounded corners */
+            padding: 10px 20px; /* Padding for size */
+            font-size: 16px; /* Font size */
+            font-weight: bold; /* Bold text */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            position: fixed; /* Fixed position for visibility */
+            top: 20px; /* Distance from bottom */
+            left    : 20px; /* Distance from right */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+        
+        /* Hover effect for the install button */
+        #installButton:hover {
+            background: linear-gradient(135deg, #7ed0ff, #ff758c    ); /* Reverse gradient */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+        }
+
         /* ============================= */
         /* Responsive Rules (Mobile View) */
         /* ============================= */
