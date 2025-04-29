@@ -13,7 +13,7 @@
         /* Header Styles */
         /* ============================= */
         header {
-            background-color: white; /* White background for the header */
+            background-color: #f9f0dc; /* White background for the header */
             padding: 10px 0; /* Top and bottom padding */
             position: fixed; /* Fix header at top */
             width: 100%; /* Full width */
@@ -29,18 +29,34 @@
             align-items: center; /* Center items vertically */
         }
 
-        /* Navbar links (desktop view) */
+        /* Navbar links styled as tabs */
         .navbar a {
-            color: #616c98; /* Default link color */
-            text-decoration: none; /* No underline */
-            padding: 10px 20px; /* Padding around text */
-            font-size: 18px; /* Font size */
+            display: inline-block; /* Ensure links are inline */
+            padding: 10px 20px; /* Add padding for size */
+            font-size: 16px; /* Font size */
+            font-weight: bold; /* Bold text */
+            color: #616c98; /* Default text color */
+            text-decoration: none; /* Remove underline */
+            border: 2px solid transparent; /* Transparent border for spacing */
+            border-bottom: 2px solid #616c98; /* Bottom border for tab effect */
+            background-color: #f9f0dc; /* Match header background */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
         }
 
-        /* Hover effect on navbar links */
+        /* Hover effect for tabs */
         .navbar a:hover {
-            background-color: lightgrey; /* Light grey background on hover */
-            border-radius: 5px; /* Rounded corners on hover */
+            background-color: #7ed0ff; /* Light blue background on hover */
+            color: white; /* White text on hover */
+            border-bottom: 2px solid #ff758c; /* Highlighted bottom border */
+            border-radius: 5px 5px 0 0; /* Rounded top corners for tab effect */
+        }
+
+        /* Active tab style */
+        .navbar a.active {
+            background-color: #ff758c; /* Active tab background */
+            color: white; /* Active tab text color */
+            border-bottom: 2px solid #ff758c; /* Match active tab border */
+            border-radius: 5px 5px 0 0; /* Rounded top corners */
         }
 
         /* ============================= */
@@ -65,8 +81,8 @@
            margin-top: 65px; /* Space below header */
         }
 
-        #installButton {
-            display: none; /* Initially hidden */
+        /* Reusable button style */
+        .button-style {
             background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Gradient background */
             color: white; /* White text color */
             border: none; /* Remove border */
@@ -77,65 +93,87 @@
             cursor: pointer; /* Pointer cursor on hover */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             transition: all 0.3s ease; /* Smooth transition for hover effects */
-            position: fixed; /* Fixed position for visibility */
-            top: 20px; /* Distance from bottom */
-            left    : 20px; /* Distance from right */
-            z-index: 1000; /* Ensure it's above other elements */
+            text-decoration: none; /* Remove underline for links */
+            display: inline-block; /* Ensure proper spacing for links */
         }
-        
-        /* Hover effect for the install button */
-        #installButton:hover {
-            background: linear-gradient(135deg, #7ed0ff, #ff758c    ); /* Reverse gradient */
+
+        /* Hover effect for buttons */
+        .button-style:hover {
+            background: linear-gradient(135deg, #ff758c, #7ed0ff); /* Reverse gradient */
             transform: scale(1.1); /* Slightly enlarge on hover */
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+        }
+
+        /* Specific styles for the install button */
+        #installButton {
+            position: fixed; /* Fixed position for visibility */
+            top: 20px; /* Distance from top */
+            left: 20px; /* Distance from left */
+            z-index: 1000; /* Ensure it's above other elements */
+            display: none; /* Initially hidden */
         }
 
         /* ============================= */
         /* Responsive Rules (Mobile View) */
         /* ============================= */
         @media (max-width: 768px) {
-            /* Hide navbar initially on mobile */
+            /* Navbar container for mobile */
             .navbar {
-                display: none; /* Hide menu */
+                display: none; /* Initially hidden */
                 flex-direction: column; /* Stack links vertically */
                 width: 100%; /* Full width */
                 text-align: center; /* Center text */
                 position: absolute; /* Absolute position over page */
                 top: 60px; /* Below header */
                 left: 0; /* Align left */
-                background-color: white; /* Background for dropdown */
+                background-color: #f9f0dc; /* Match header background */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+                border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+                z-index: 1000; /* Ensure it appears above other content */
             }
-
+        
             /* Links inside navbar (mobile) */
             .navbar a {
                 display: block; /* Each link on its own line */
-                padding: 10px; /* Padding for easier tapping */
-                border-top: 1px solid #575757; /* Divider line between links */
-                color: #9775ad; /* Change link color in burger menu */
+                padding: 15px 20px; /* Add padding for easier tapping */
+                font-size: 18px; /* Slightly larger font for mobile */
+                font-weight: bold; /* Bold text */
+                color: #616c98; /* Default text color */
+                text-decoration: none; /* Remove underline */
+                background-color: #f9f0dc; /* Match navbar background */
+                border-bottom: 1px solid #ddd; /* Divider between links */
+                transition: all 0.3s ease; /* Smooth hover effect */
             }
-            .body-content {
-                margin-top: 0px; /* Space below header */
-             }
-             header {
-                background-color: #f9f0dc; /* Change header color for mobile */
-                padding: 0; /* Remove padding for mobile */
-             }
+        
+            /* Hover effect for mobile links */
+            .navbar a:hover {
+                background-color: #7ed0ff; /* Light blue background on hover */
+                color: white; /* White text on hover */
+            }
+        
+            /* Active link style for mobile */
+            .navbar a.active {
+                background-color: #ff758c; /* Highlight active link */
+                color: white; /* White text for active link */
+            }
+        
             /* Show burger menu icon */
             .burger {
-                display: flex; /* Flex (show) */
+                display: flex; /* Show burger menu */
                 position: absolute; /* Absolute positioning */
                 top: 15px; /* Distance from top */
                 right: 20px; /* Distance from right */
+                cursor: pointer; /* Pointer cursor */
             }
-
-            /* Show navbar when active */
+        
+            /* Navbar active state (when burger is clicked) */
             .navbar.active {
-                display: flex; /* Flex container when burger clicked */
+                display: flex; /* Show navbar */
             }
-
+        
             /* Burger animation when open */
             .burger.open div:nth-child(1) {
-                transform: rotate(45deg); /* First bar rotate */
+                transform: rotate(45deg); /* Rotate first bar */
                 position: relative;
                 top: 7px;
             }
@@ -143,7 +181,7 @@
                 opacity: 0; /* Hide middle bar */
             }
             .burger.open div:nth-child(3) {
-                transform: rotate(-45deg); /* Third bar rotate */
+                transform: rotate(-45deg); /* Rotate third bar */
                 position: relative;
                 top: -7px;
             }
