@@ -6,7 +6,7 @@
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
             box-sizing: border-box; /* Include padding + border inside element's total width/height */
-            background-color: #f9f0dc; /* Light cream background */
+            background-color: #fff4e4 ; /* Light cream background */
         }
 
         /* ============================= */
@@ -113,6 +113,12 @@
             display: none; /* Initially hidden */
         }
 
+        /* Default logo size */
+        .logo {
+            width: 657px; /* Default width matching index.html */
+            height: auto; /* Maintain aspect ratio */
+        }
+
         /* ============================= */
         /* Responsive Rules (Mobile View) */
         /* ============================= */
@@ -184,5 +190,9 @@
                 transform: rotate(-45deg); /* Rotate third bar */
                 position: relative;
                 top: -7px;
+            }
+            .logo {
+                width: 300px; /* 60% of the original width */
+                height: auto; /* 60% of the original height */
             }
         }
