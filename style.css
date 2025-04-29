@@ -88,7 +88,13 @@
                 border-top: 1px solid #575757; /* Divider line between links */
                 color: #9775ad; /* Change link color in burger menu */
             }
-
+            .body-content {
+                margin-top: 0px; /* Space below header */
+             }
+             header {
+                background-color: #f9f0dc; /* Change header color for mobile */
+                padding: 0; /* Remove padding for mobile */
+             }
             /* Show burger menu icon */
             .burger {
                 display: flex; /* Flex (show) */
