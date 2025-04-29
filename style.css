@@ -70,9 +70,9 @@
 
         /* The three bars of the burger */
         .burger div {
-            width: 50px; /* Width of each bar */
-            height: 10px; /* Height of each bar */
-            margin: 7px 0; /* Space between bars */
+            width: 34px; /* Width of each bar */
+            height: 4px; /* Height of each bar */
+            margin: 6px 0; /* Space between bars */
             background-color: pink; /* Pink color for burger bars */
             transition: 0.3s; /* Smooth animation */
         }
