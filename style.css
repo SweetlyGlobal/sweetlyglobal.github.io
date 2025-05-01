@@ -113,11 +113,32 @@
             display: none; /* Initially hidden */
         }
 
-        /* Default logo size */
+        @keyframes floatBounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(40px); /* Goes deeper down */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
         .logo {
             width: 657px; /* Default width matching index.html */
             height: auto; /* Maintain aspect ratio */
+            animation: floatBounce 3s ease-in-out infinite;
         }
+        .headingText { /* for the headings on the top of the pages and the "Keep the World Sweet" text */
+            color: #587dd6;
+            font-size: 87px; /* Larger font size */
+            font-family: 'Corben', serif;
+            text-align: center; /* Center the text */
+            margin: 60px 0; /* Top and bottom margin */
+            display: block; /* Make it a block-level element */
+        }
+
+        
 
         /* ============================= */
         /* Responsive Rules (Mobile View) */
