@@ -108,9 +108,31 @@
         #installButton {
             position: fixed; /* Fixed position for visibility */
             top: 20px; /* Distance from top */
-            left: 20px; /* Distance from left */
+            left: 5px; /* Distance from left */
             z-index: 1000; /* Ensure it's above other elements */
             display: none; /* Initially hidden */
+        }
+        #learnMoreButton {
+            position: absolute; /* Position relative to the parent container */
+            top: calc(50% + 350px); /* Keep the adjusted position */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for the button's own dimensions */
+            z-index: 1000; /* Ensure it's above other elements */
+            display: block; /* Ensure the button is visible */
+            padding: 22.5px 45px; /* 1.5 times the current padding */
+            font-size: 36px; /* 1.5 times the current font size */
+            border-radius: 25px; /* Match the rounded corners of the install button */
+            background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Match the gradient background */
+            color: white; /* Match the text color */
+            border: none; /* Remove border */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match the shadow */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        #learnMoreButton:hover {
+            background: linear-gradient(135deg, #ff758c, #7ed0ff);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Increased blur and spread for stronger shadow */
+            /* No transform if you want it to stay in place */
         }
 
         @keyframes floatBounce {
@@ -215,5 +237,29 @@
             .logo {
                 width: 300px; /* 60% of the original width */
                 height: auto; /* 60% of the original height */
+            }
+
+            #installButton {
+                top: 10px; /* Adjust position for smaller screens */
+                left: 10px; /* Adjust position for smaller screens */
+                padding: 8px 16px; /* Reduce padding */
+                font-size: 14px; /* Reduce font size */
+            }
+
+            .logo {
+                width: 200px; /* Smaller width for mobile */
+                height: auto; /* Maintain aspect ratio */
+                margin: 20px auto; /* Add spacing */
+            }
+
+            .headingText {
+                font-size: 36px; /* Further reduce font size */
+                margin: 30px 0; /* Adjust margins */
+            }
+
+            #learnMoreButton {
+                top: calc(50% + 150px); /* Adjust position further for smaller screens */
+                padding: 12px 24px; /* Further reduce padding */
+                font-size: 20px; /* Further reduce font size */
             }
         }
