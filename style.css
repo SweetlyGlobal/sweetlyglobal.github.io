@@ -112,9 +112,9 @@
             z-index: 1000; /* Ensure it's above other elements */
             display: none; /* Initially hidden */
         }
-        #learnMoreButton {
+        #learnMoreButton{
             position: absolute; /* Position relative to the parent container */
-            top: calc(50% + 350px); /* Keep the adjusted position */
+        
             left: 50%; /* Center horizontally */
             transform: translate(-50%, -50%); /* Adjust for the button's own dimensions */
             z-index: 1000; /* Ensure it's above other elements */
@@ -127,6 +127,9 @@
             border: none; /* Remove border */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match the shadow */
             transition: all 0.3s ease; /* Smooth transition for hover effects */
+            display: inline-block; /* Ensure the button is inline-block */
+            margin: 0 auto; /* Center the button */
+            margin-top: 10px; /* Add spacing above the button */
         }
 
         #learnMoreButton:hover {
@@ -147,6 +150,8 @@
             }
         }
         .logo {
+            display: block; /* Ensure the logo is a block element */
+            margin: 0 auto; /* Center the logo */
             width: 657px; /* Default width matching index.html */
             height: auto; /* Maintain aspect ratio */
             animation: floatBounce 3s ease-in-out infinite;
@@ -156,10 +161,16 @@
             font-size: 87px; /* Larger font size */
             font-family: 'Corben', serif;
             text-align: center; /* Center the text */
+            margin: 0 auto; /* Center the heading */
             margin: 60px 0; /* Top and bottom margin */
+            margin-bottom: 20px; /* Add spacing below the heading */
             display: block; /* Make it a block-level element */
         }
-
+        .positioning{
+            position: relative; /* Ensure relative positioning for child elements */
+            text-align: center; /* Center-align content inside the div */
+            margin-bottom: 30px; /* Add spacing between the divs */
+        }
         
 
         /* ============================= */
@@ -235,8 +246,9 @@
                 top: -7px;
             }
             .logo {
-                width: 300px; /* 60% of the original width */
-                height: auto; /* 60% of the original height */
+                width: 190px; /* Smaller width for mobile */
+                height: auto; /* Maintain aspect ratio */
+                margin-bottom: 20px; /* Add spacing below the logo */
             }
 
             #installButton {
@@ -250,16 +262,23 @@
                 width: 190px; /* Smaller width for mobile */
                 height: auto; /* Maintain aspect ratio */
                 margin: 20px auto; /* Add spacing */
+                margin-bottom: 20px; /* Add spacing below the logo */
             }
 
             .headingText {
                 font-size: 36px; /* Further reduce font size */
                 margin: 35px 0; /* Move it down by 10px */
+                margin-bottom: 15px; /* Adjust spacing below the heading */
             }
 
             #learnMoreButton {
-                top: calc(50% - 80px); /* Move it down by 50px */
+               
                 padding: 12px 24px; /* Further reduce padding */
                 font-size: 20px; /* Further reduce font size */
+                margin-top: 15px; /* Adjust spacing above the button */
+            }
+
+            .positioning {
+                margin-bottom: 20px; /* Ensure consistent spacing between divs */
             }
         }
