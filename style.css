@@ -258,7 +258,7 @@
             }
 
             #learnMoreButton {
-                top: calc(50% + 150px); /* Adjust position further for smaller screens */
+                top: calc(50% + 100px); /* Reduce the distance from the text */
                 padding: 12px 24px; /* Further reduce padding */
                 font-size: 20px; /* Further reduce font size */
             }
