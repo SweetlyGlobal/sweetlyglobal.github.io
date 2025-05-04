@@ -94,7 +94,9 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             transition: all 0.3s ease; /* Smooth transition for hover effects */
             text-decoration: none; /* Remove underline for links */
-            display: inline-block; /* Ensure proper spacing for links */
+            display: block; /* Ensure proper spacing for links */
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         /* Hover effect for buttons */
@@ -112,30 +114,62 @@
             z-index: 1000; /* Ensure it's above other elements */
             display: none; /* Initially hidden */
         }
-        #learnMoreButton{
-            position: absolute; /* Position relative to the parent container */
-        
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust for the button's own dimensions */
-            z-index: 1000; /* Ensure it's above other elements */
-            display: block; /* Ensure the button is visible */
-            padding: 22.5px 45px; /* 1.5 times the current padding */
-            font-size: 36px; /* 1.5 times the current font size */
-            border-radius: 25px; /* Match the rounded corners of the install button */
-            background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Match the gradient background */
-            color: white; /* Match the text color */
-            border: none; /* Remove border */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match the shadow */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-            display: inline-block; /* Ensure the button is inline-block */
-            margin: 0 auto; /* Center the button */
-            margin-top: 10px; /* Add spacing above the button */
+        #learnMoreButton {
+            display: inline-block; /* Ensures it's treated like an inline element */
+            margin: 0 auto; /* Centers the button */
+            margin-top: 20px; /* Adds spacing above the button */
+            padding: 22.5px 45px; /* Adjust padding */
+            font-size: 36px; /* Adjust font size */
+            border-radius: 25px;
+            background: linear-gradient(135deg, #7ed0ff, #ff758c);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center; /* Centers text inside the button */
         }
-
+        
         #learnMoreButton:hover {
             background: linear-gradient(135deg, #ff758c, #7ed0ff);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Increased blur and spread for stronger shadow */
-            /* No transform if you want it to stay in place */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Image styles */
+        #missionImage {
+            width: 100%; /* Make the image span the full width of the window */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure it's treated as a block element */
+            margin: 0 auto; /* Center the image horizontally */
+            margin-bottom: 20px; /* Adds space below the image */
+        }
+
+        .text-box {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for true centering */
+            background-color: rgba(253, 242, 231, 0.85); /* Slightly more translucent */
+            color: #587dd6; /* Text color */
+            padding: 30px 40px; /* Increase padding for larger content */
+            border-radius: 0; /* Remove rounded edges */
+            font-size: 1.2rem;
+            font-family: sans-serif;
+            width: 70%; /* Increase box width to cover most of the image */
+            text-align: center; /* Center-align text inside the box */
+            max-width: 100%; /* Ensure the box does not exceed the image width */
+            max-height: 100%; /* Ensure the box does not exceed the image height */
+            overflow: hidden; /* Hide overflow content */
+        }
+
+        .text-box pre {
+            font-family: "Journal Sans New Display", serif; /* Update font */
+            font-size: 16px; /* Reduce font size */
+            font-weight: 300; /* Thin font */
+            color: #587dd6; /* Text color */
+            white-space: pre-wrap; /* Allow wrapping inside the box */
+            margin: 0; /* Remove default margin */
+            text-align: center; /* Center-align text inside the box */
+            line-height: normal; /* Remove the 0.8 line spacing */
         }
 
         @keyframes floatBounce {
@@ -175,7 +209,6 @@
 
         /* ============================= */
         /* Responsive Rules (Mobile View) */
-        /* ============================= */
         @media (max-width: 768px) {
             /* Navbar container for mobile */
             .navbar {
@@ -279,6 +312,30 @@
             }
 
             .positioning {
-                margin-bottom: 20px; /* Ensure consistent spacing between divs */
+                margin-bottom: 15px; /* Adjust spacing for smaller screens */
+            }
+
+            #missionImage {
+                width: 100%; /* Ensure the image spans the full width */
+                height: auto; /* Maintain aspect ratio */
+            }
+
+            .text-box {
+                width: 85%; /* Further shrink box width */
+                padding: 8px 10px; /* Reduce padding */
+                max-width: 100%; /* Ensure the box does not exceed the image width */
+                max-height: 75%; /* Reduce height to prevent overflow */
+                overflow: hidden; /* Hide overflow content */
+            }
+
+            .text-box pre {
+                font-size: 10px; /* Further reduce font size for smaller screens */
+                line-height: 1.1; /* Adjust line spacing for better readability */
+                white-space: normal; /* Ensure text wraps properly */
+            }
+
+            .text-box h2 {
+                font-size: 14px; /* Reduce heading size for smaller screens */
+                margin-bottom: 8px; /* Adjust spacing below the heading */
             }
         }
