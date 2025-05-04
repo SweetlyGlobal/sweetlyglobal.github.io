@@ -1,341 +1,308 @@
 /* ============================= */
-        /* General Page Styles */
-        /* ============================= */
-        body {
-            font-family: Arial, sans-serif; /* Set font */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            box-sizing: border-box; /* Include padding + border inside element's total width/height */
-            background-color: #fff4e4 ; /* Light cream background */
-        }
+/* General Page Styles */
+/* ============================= */
+body {
+    font-family: Arial, sans-serif; /* Set the font for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    background-color: #fff4e4; /* Set a light cream background color */
+}
 
-        /* ============================= */
-        /* Header Styles */
-        /* ============================= */
-        header {
-            background-color: #f9f0dc; /* White background for the header */
-            padding: 10px 0; /* Top and bottom padding */
-            position: fixed; /* Fix header at top */
-            width: 100%; /* Full width */
-            top: 0; /* Align to top */
-            left: 0; /* Align to left */
-            z-index: 1000; /* Keep header above other content */
-        }
+/* ============================= */
+/* Header Styles */
+/* ============================= */
+header {
+    background-color: #f9f0dc; /* Set the header background color */
+    padding: 10px 0; /* Add padding to the top and bottom of the header */
+    position: fixed; /* Fix the header at the top of the page */
+    width: 100%; /* Make the header span the full width of the page */
+    top: 0; /* Align the header to the top */
+    left: 0; /* Align the header to the left */
+    z-index: 1000; /* Ensure the header stays above other content */
+}
 
-        /* Navbar container (desktop view) */
-        .navbar {
-            display: flex; /* Arrange items in a row */
-            justify-content: space-around; /* Evenly space links */
-            align-items: center; /* Center items vertically */
-        }
+/* Navbar container (desktop view) */
+.navbar {
+    display: flex; /* Arrange navbar items in a row */
+    justify-content: space-around; /* Space out navbar links evenly */
+    align-items: center; /* Center navbar items vertically */
+}
 
-        /* Navbar links styled as tabs */
-        .navbar a {
-            display: inline-block; /* Ensure links are inline */
-            padding: 10px 20px; /* Add padding for size */
-            font-size: 16px; /* Font size */
-            font-weight: bold; /* Bold text */
-            color: #616c98; /* Default text color */
-            text-decoration: none; /* Remove underline */
-            border: 2px solid transparent; /* Transparent border for spacing */
-            border-bottom: 2px solid #616c98; /* Bottom border for tab effect */
-            background-color: #f9f0dc; /* Match header background */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-        }
+/* Navbar links styled as tabs */
+.navbar a {
+    display: inline-block; /* Ensure links are inline */
+    padding: 10px 20px; /* Add padding around links */
+    font-size: 16px; /* Set font size for links */
+    font-weight: bold; /* Make link text bold */
+    color: #616c98; /* Set default text color */
+    text-decoration: none; /* Remove underline from links */
+    border: 2px solid transparent; /* Add a transparent border for spacing */
+    border-bottom: 2px solid #616c98; /* Add a bottom border for tab effect */
+    background-color: #f9f0dc; /* Match the header background color */
+    transition: all 0.3s ease; /* Add a smooth transition for hover effects */
+}
 
-        /* Hover effect for tabs */
-        .navbar a:hover {
-            background-color: #7ed0ff; /* Light blue background on hover */
-            color: white; /* White text on hover */
-            border-bottom: 2px solid #ff758c; /* Highlighted bottom border */
-            border-radius: 5px 5px 0 0; /* Rounded top corners for tab effect */
-        }
+/* Hover effect for tabs */
+.navbar a:hover {
+    background-color: #7ed0ff; /* Change background color on hover */
+    color: white; /* Change text color to white on hover */
+    border-bottom: 2px solid #ff758c; /* Highlight the bottom border on hover */
+    border-radius: 5px 5px 0 0; /* Add rounded top corners for the tab effect */
+}
 
-        /* Active tab style */
-        .navbar a.active {
-            background-color: #ff758c; /* Active tab background */
-            color: white; /* Active tab text color */
-            border-bottom: 2px solid #ff758c; /* Match active tab border */
-            border-radius: 5px 5px 0 0; /* Rounded top corners */
-        }
+/* Active tab style */
+.navbar a.active {
+    background-color: #ff758c; /* Set background color for the active tab */
+    color: white; /* Set text color for the active tab */
+    border-bottom: 2px solid #ff758c; /* Match the active tab border color */
+    border-radius: 5px 5px 0 0; /* Add rounded top corners for the active tab */
+}
 
-        /* ============================= */
-        /* Burger Menu Styles (for mobile) */
-        /* ============================= */
-        .burger {
-            display: none; /* Hide burger by default (desktop) */
-            flex-direction: column; /* Stack the bars */
-            cursor: pointer; /* Pointer cursor on hover */
-        }
+/* ============================= */
+/* Burger Menu Styles (for mobile) */
+/* ============================= */
+.burger {
+    display: none; /* Hide the burger menu by default (desktop view) */
+    flex-direction: column; /* Stack the burger bars vertically */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
 
-        /* The three bars of the burger */
-        .burger div {
-            width: 34px; /* Width of each bar */
-            height: 4px; /* Height of each bar */
-            margin: 6px 0; /* Space between bars */
-            background-color: pink; /* Pink color for burger bars */
-            transition: 0.3s; /* Smooth animation */
-        }
+/* The three bars of the burger */
+.burger div {
+    width: 34px; /* Set the width of each bar */
+    height: 4px; /* Set the height of each bar */
+    margin: 6px 0; /* Add space between bars */
+    background-color: pink; /* Set the color of the burger bars */
+    transition: 0.3s; /* Add a smooth animation */
+}
 
-        .body-content {
-           margin-top: 65px; /* Space below header */
-        }
+/* Body content spacing */
+.body-content {
+    margin-top: 65px; /* Add space below the header */
+}
 
-        /* Reusable button style */
-        .button-style {
-            background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Gradient background */
-            color: white; /* White text color */
-            border: none; /* Remove border */
-            border-radius: 25px; /* Rounded corners */
-            padding: 10px 20px; /* Padding for size */
-            font-size: 16px; /* Font size */
-            font-weight: bold; /* Bold text */
-            cursor: pointer; /* Pointer cursor on hover */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-            text-decoration: none; /* Remove underline for links */
-            display: block; /* Ensure proper spacing for links */
-            text-align: center;
-            margin-bottom: 30px;
-        }
+/* Reusable button style */
+.button-style {
+    background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Add a gradient background */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Add rounded corners */
+    padding: 10px 20px; /* Add padding for size */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Add a smooth transition for hover effects */
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block; /* Ensure proper spacing for links */
+}
 
-        /* Hover effect for buttons */
-        .button-style:hover {
-            background: linear-gradient(135deg, #ff758c, #7ed0ff); /* Reverse gradient */
-            transform: scale(1.1); /* Slightly enlarge on hover */
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-        }
+/* Hover effect for buttons */
+.button-style:hover {
+    background: linear-gradient(135deg, #ff758c, #7ed0ff); /* Reverse the gradient on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+}
 
-        /* Specific styles for the install button */
-        #installButton {
-            position: fixed; /* Fixed position for visibility */
-            top: 20px; /* Distance from top */
-            left: 5px; /* Distance from left */
-            z-index: 1000; /* Ensure it's above other elements */
-            display: none; /* Initially hidden */
-        }
-        #learnMoreButton {
-            display: inline-block; /* Ensures it's treated like an inline element */
-            margin: 0 auto; /* Centers the button */
-            margin-top: 20px; /* Adds spacing above the button */
-            padding: 22.5px 45px; /* Adjust padding */
-            font-size: 36px; /* Adjust font size */
-            border-radius: 25px;
-            background: linear-gradient(135deg, #7ed0ff, #ff758c);
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            text-align: center; /* Centers text inside the button */
-        }
-        
-        #learnMoreButton:hover {
-            background: linear-gradient(135deg, #ff758c, #7ed0ff);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Image styles */
-        #missionImage {
-            width: 100%; /* Make the image span the full width of the window */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Ensure it's treated as a block element */
-            margin: 0 auto; /* Center the image horizontally */
-            margin-bottom: 20px; /* Adds space below the image */
-        }
+/* Specific styles for the install button */
+#installButton {
+    position: fixed; /* Fix the button position */
+    top: 20px; /* Set distance from the top */
+    left: 5px; /* Set distance from the left */
+    z-index: 1000; /* Ensure the button stays above other elements */
+    display: none; /* Hide the button initially */
+}
 
-        .text-box {
-            position: absolute;
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust for true centering */
-            background-color: rgba(253, 242, 231, 0.85); /* Slightly more translucent */
-            color: #587dd6; /* Text color */
-            padding: 30px 40px; /* Increase padding for larger content */
-            border-radius: 0; /* Remove rounded edges */
-            font-size: 1.2rem;
-            font-family: sans-serif;
-            width: 70%; /* Increase box width to cover most of the image */
-            text-align: center; /* Center-align text inside the box */
-            max-width: 100%; /* Ensure the box does not exceed the image width */
-            max-height: 100%; /* Ensure the box does not exceed the image height */
-            overflow: hidden; /* Hide overflow content */
-        }
+/* Learn More button styles */
+#learnMoreButton {
+    position: relative; /* Keep the button in the normal document flow */
+    margin: 20px auto; /* Center the button and add spacing above */
+    padding: 22.5px 45px; /* Adjust padding for size */
+    font-size: 36px; /* Set font size */
+    border-radius: 25px; /* Add rounded corners */
+    background: linear-gradient(135deg, #7ed0ff, #ff758c); /* Add a gradient background */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Add a smooth transition for hover effects */
+    text-align: center; /* Center-align text inside the button */
+}
 
-        .text-box pre {
-            font-family: "Journal Sans New Display", serif; /* Update font */
-            font-size: 16px; /* Reduce font size */
-            font-weight: 300; /* Thin font */
-            color: #587dd6; /* Text color */
-            white-space: pre-wrap; /* Allow wrapping inside the box */
-            margin: 0; /* Remove default margin */
-            text-align: center; /* Center-align text inside the box */
-            line-height: normal; /* Remove the 0.8 line spacing */
-        }
+/* Hover effect for Learn More button */
+#learnMoreButton:hover {
+    background: linear-gradient(135deg, #ff758c, #7ed0ff); /* Reverse the gradient on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+}
 
-        @keyframes floatBounce {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(40px); /* Goes deeper down */
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        .logo {
-            display: block; /* Ensure the logo is a block element */
-            margin: 0 auto; /* Center the logo */
-            width: 657px; /* Default width matching index.html */
-            height: auto; /* Maintain aspect ratio */
-            animation: floatBounce 3s ease-in-out infinite;
-        }
-        .headingText { /* for the headings on the top of the pages and the "Keep the World Sweet" text */
-            color: #587dd6;
-            font-size: 87px; /* Larger font size */
-            font-family: 'Corben', serif;
-            text-align: center; /* Center the text */
-            margin: 0 auto; /* Center the heading */
-            margin: 60px 0; /* Top and bottom margin */
-            margin-bottom: 20px; /* Add spacing below the heading */
-            display: block; /* Make it a block-level element */
-        }
-        .positioning{
-            position: relative; /* Ensure relative positioning for child elements */
-            text-align: center; /* Center-align content inside the div */
-            margin-bottom: 30px; /* Add spacing between the divs */
-        }
-        
+/* Floating animation for the logo */
+@keyframes floatBounce {
+    0% {
+        transform: translateY(0); /* Start at the original position */
+    }
+    50% {
+        transform: translateY(40px); /* Move down */
+    }
+    100% {
+        transform: translateY(0); /* Return to the original position */
+    }
+}
 
-        /* ============================= */
-        /* Responsive Rules (Mobile View) */
-        @media (max-width: 768px) {
-            /* Navbar container for mobile */
-            .navbar {
-                display: none; /* Initially hidden */
-                flex-direction: column; /* Stack links vertically */
-                width: 100%; /* Full width */
-                text-align: center; /* Center text */
-                position: absolute; /* Absolute position over page */
-                top: 60px; /* Below header */
-                left: 0; /* Align left */
-                background-color: #f9f0dc; /* Match header background */
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-                border-radius: 0 0 10px 10px; /* Rounded bottom corners */
-                z-index: 1000; /* Ensure it appears above other content */
-            }
-        
-            /* Links inside navbar (mobile) */
-            .navbar a {
-                display: block; /* Each link on its own line */
-                padding: 15px 20px; /* Add padding for easier tapping */
-                font-size: 18px; /* Slightly larger font for mobile */
-                font-weight: bold; /* Bold text */
-                color: #616c98; /* Default text color */
-                text-decoration: none; /* Remove underline */
-                background-color: #f9f0dc; /* Match navbar background */
-                border-bottom: 1px solid #ddd; /* Divider between links */
-                transition: all 0.3s ease; /* Smooth hover effect */
-            }
-        
-            /* Hover effect for mobile links */
-            .navbar a:hover {
-                background-color: #7ed0ff; /* Light blue background on hover */
-                color: white; /* White text on hover */
-            }
-        
-            /* Active link style for mobile */
-            .navbar a.active {
-                background-color: #ff758c; /* Highlight active link */
-                color: white; /* White text for active link */
-            }
-        
-            /* Show burger menu icon */
-            .burger {
-                display: flex; /* Show burger menu */
-                position: absolute; /* Absolute positioning */
-                top: 15px; /* Distance from top */
-                right: 20px; /* Distance from right */
-                cursor: pointer; /* Pointer cursor */
-            }
-        
-            /* Navbar active state (when burger is clicked) */
-            .navbar.active {
-                display: flex; /* Show navbar */
-            }
-        
-            /* Burger animation when open */
-            .burger.open div:nth-child(1) {
-                transform: rotate(45deg); /* Rotate first bar */
-                position: relative;
-                top: 7px;
-            }
-            .burger.open div:nth-child(2) {
-                opacity: 0; /* Hide middle bar */
-            }
-            .burger.open div:nth-child(3) {
-                transform: rotate(-45deg); /* Rotate third bar */
-                position: relative;
-                top: -7px;
-            }
-            .logo {
-                width: 190px; /* Smaller width for mobile */
-                height: auto; /* Maintain aspect ratio */
-                margin-bottom: 20px; /* Add spacing below the logo */
-            }
+/* Logo styles */
+.logo {
+    display: block; /* Ensure the logo is a block element */
+    margin: 0 auto; /* Center the logo */
+    width: 657px; /* Set the default width */
+    height: auto; /* Maintain aspect ratio */
+    animation: floatBounce 3s ease-in-out infinite; /* Add a floating animation */
+}
 
-            #installButton {
-                top: 10px; /* Adjust position for smaller screens */
-                left: 10px; /* Adjust position for smaller screens */
-                padding: 8px 16px; /* Reduce padding */
-                font-size: 14px; /* Reduce font size */
-            }
+/* Heading text styles */
+.headingText {
+    color: #587dd6; /* Set text color */
+    font-size: 87px; /* Set font size */
+    font-family: 'Corben', serif; /* Set font family */
+    text-align: center; /* Center-align the text */
+    margin: 0 auto; /* Center the heading */
+    margin: 60px 0; /* Add top and bottom margin */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    display: block; /* Make it a block-level element */
+}
 
-            .logo {
-                width: 190px; /* Smaller width for mobile */
-                height: auto; /* Maintain aspect ratio */
-                margin: 20px auto; /* Add spacing */
-                margin-bottom: 20px; /* Add spacing below the logo */
-            }
+/* Positioning styles for elements */
+.positioning {
+    position: relative; /* Ensure relative positioning for child elements */
+    text-align: center; /* Center-align content inside the div */
+    margin-bottom: 30px; /* Add spacing between the divs */
+}
 
-            .headingText {
-                font-size: 36px; /* Further reduce font size */
-                margin: 35px 0; /* Move it down by 10px */
-                margin-bottom: 15px; /* Adjust spacing below the heading */
-            }
+/* Text box styles */
+.text-box {
+    background-color: rgba(248, 239, 228, 0.7); /* Set a translucent background */
+    width: 90%; /* Set width for responsiveness */
+    max-width: 1000px; /* Limit the maximum width */
+    padding: 40px; /* Add padding for better spacing */
+    border-radius: 10px; /* Add rounded corners */
+    color: #587dd6; /* Set text color */
+    font-size: 24px; /* Set font size */
+    font-family: Arial, sans-serif; /* Set font family */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    position: relative; /* Position relative for child elements */
+    margin: 0 auto; /* Center the text box */
+}
 
-            #learnMoreButton {
-               
-                padding: 12px 24px; /* Further reduce padding */
-                font-size: 20px; /* Further reduce font size */
-                margin-top: 15px; /* Adjust spacing above the button */
-            }
+/* ============================= */
+/* Responsive Rules (Mobile View) */
+/* ============================= */
+@media (max-width: 768px) {
+    /* Navbar container for mobile */
+    .navbar {
+        display: none; /* Initially hidden */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        text-align: center; /* Center text */
+        position: absolute; /* Absolute position over page */
+        top: 60px; /* Below header */
+        left: 0; /* Align left */
+        background-color: #f9f0dc; /* Match header background */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+        z-index: 1000; /* Ensure it appears above other content */
+    }
 
-            .positioning {
-                margin-bottom: 15px; /* Adjust spacing for smaller screens */
-            }
+    /* Links inside navbar (mobile) */
+    .navbar a {
+        display: block; /* Each link on its own line */
+        padding: 15px 20px; /* Add padding for easier tapping */
+        font-size: 18px; /* Slightly larger font for mobile */
+        font-weight: bold; /* Bold text */
+        color: #616c98; /* Default text color */
+        text-decoration: none; /* Remove underline */
+        background-color: #f9f0dc; /* Match navbar background */
+        border-bottom: 1px solid #ddd; /* Divider between links */
+        transition: all 0.3s ease; /* Smooth hover effect */
+    }
 
-            #missionImage {
-                width: 100%; /* Ensure the image spans the full width */
-                height: auto; /* Maintain aspect ratio */
-            }
+    /* Hover effect for mobile links */
+    .navbar a:hover {
+        background-color: #7ed0ff; /* Light blue background on hover */
+        color: white; /* White text on hover */
+    }
 
-            .text-box {
-                width: 85%; /* Further shrink box width */
-                padding: 8px 10px; /* Reduce padding */
-                max-width: 100%; /* Ensure the box does not exceed the image width */
-                max-height: 75%; /* Reduce height to prevent overflow */
-                overflow: hidden; /* Hide overflow content */
-            }
+    /* Active link style for mobile */
+    .navbar a.active {
+        background-color: #ff758c; /* Highlight active link */
+        color: white; /* White text for active link */
+    }
 
-            .text-box pre {
-                font-size: 10px; /* Further reduce font size for smaller screens */
-                line-height: 1.1; /* Adjust line spacing for better readability */
-                white-space: normal; /* Ensure text wraps properly */
-            }
+    /* Show burger menu icon */
+    .burger {
+        display: flex; /* Show burger menu */
+        position: absolute; /* Absolute positioning */
+        top: 15px; /* Distance from top */
+        right: 20px; /* Distance from right */
+        cursor: pointer; /* Pointer cursor */
+    }
 
-            .text-box h2 {
-                font-size: 14px; /* Reduce heading size for smaller screens */
-                margin-bottom: 8px; /* Adjust spacing below the heading */
-            }
-        }
+    /* Navbar active state (when burger is clicked) */
+    .navbar.active {
+        display: flex; /* Show navbar */
+    }
+
+    /* Burger animation when open */
+    .burger.open div:nth-child(1) {
+        transform: rotate(45deg); /* Rotate first bar */
+        position: relative;
+        top: 7px;
+    }
+    .burger.open div:nth-child(2) {
+        opacity: 0; /* Hide middle bar */
+    }
+    .burger.open div:nth-child(3) {
+        transform: rotate(-45deg); /* Rotate third bar */
+        position: relative;
+        top: -7px;
+    }
+    .logo {
+        width: 190px; /* Smaller width for mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Add spacing below the logo */
+    }
+
+    #installButton {
+        top: 10px; /* Adjust position for smaller screens */
+        left: 10px; /* Adjust position for smaller screens */
+        padding: 8px 16px; /* Reduce padding */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .logo {
+        width: 190px; /* Smaller width for mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin: 20px auto; /* Add spacing */
+        margin-bottom: 20px; /* Add spacing below the logo */
+    }
+
+    .headingText {
+        font-size: 36px; /* Further reduce font size */
+        margin: 35px 0; /* Move it down by 10px */
+        margin-bottom: 15px; /* Adjust spacing below the heading */
+    }
+
+    #learnMoreButton {
+        padding: 12px 24px; /* Further reduce padding */
+        font-size: 20px; /* Further reduce font size */
+        margin-top: 15px; /* Adjust spacing above the button */
+    }
+
+    .positioning {
+        margin-bottom: 20px; /* Ensure consistent spacing between divs */
+    }
+
+    .text-box {
+        width: 80%; /* Reduce width for smaller screens */
+        max-width: 350px; /* Adjust maximum width for smaller screens */
+        padding: 25px; /* Adjust padding for better fit */
+        font-size: 20px; /* Slightly reduce font size for smaller screens */
+    }
+}
