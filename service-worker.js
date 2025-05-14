@@ -13,3 +13,5 @@ self.addEventListener('install', function(event) {
     // Just fetch everything normally
     event.respondWith(fetch(event.request));
   });
+
+  

@@ -175,26 +175,303 @@ header {
     text-align: center; /* Center-align content inside the div */
     margin-bottom: 30px; /* Add spacing between the divs */
 }
-
-/* Text box styles */
-.text-box {
-    background-color: rgba(248, 239, 228, 0.7); /* Set a translucent background */
-    width: 90%; /* Set width for responsiveness */
-    max-width: 1000px; /* Limit the maximum width */
-    padding: 40px; /* Add padding for better spacing */
-    border-radius: 10px; /* Add rounded corners */
-    color: #587dd6; /* Set text color */
-    font-size: 24px; /* Set font size */
-    font-family: Arial, sans-serif; /* Set font family */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-    position: relative; /* Position relative for child elements */
-    margin: 0 auto; /* Center the text box */
+/* Add a background image to the parent container */
+.background-container {
+    position: relative; /* Ensure child elements can be positioned relative to this container */
+    background-image: url('missionBackgroundImage.png'); /* Replace with the path to your image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox to center the text-box */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Prevent content from overflowing the container */
+    .text-box {
+        background-color: rgb(243, 236, 225,.9); /* Set a translucent background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better visibility */
+        max-width: 95%; /* Increase maximum width */
+        max-height: 90%; /* Adjust height to fit within the container */
+        overflow-y: auto; /* Add vertical scrolling if content overflows */
+        margin: auto; /* Center the text-box within the container */
+        text-align: center; /* Center-align text */
+        color: #587dd6; /* Text color */
+        font-size: 24px; /* Increase font size */
+        line-height: 2; /* Adjust line height for better spacing */
+        padding: 15px; /* Add more padding for better spacing */
+    }
 }
 
+#founding-story-heading {
+    font-weight: bold; /* Make only the element with this ID bold */
+    display: inline; /* Ensure it doesn't affect the layout of surrounding text */
+}
+
+.bold-text {
+    font-weight: bold; /* Make text bold */
+    text-align: center; /* Center-align the text */
+    display: block; /* Ensure it behaves as a block element for centering */
+}
+
+
+
+#CommunnityIntro {
+    color: #35abec; /* Set the text color */
+    font-size: 50px; /* Set font size */
+    font-family: 'Playfair Display', serif;
+    margin: 60px 0; /* Add top and bottom margin */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    display: block; /* Make it a block-level element */
+}
+
+#Communnity {
+    color: #35abec; /* Set the text color */
+    font-size: 15px; /* Set font size */
+    max-width: 75vh; /* Add a maximum width for responsiveness */
+    line-height: 1.5; /* Adjust line height for better spacing */
+    text-align: center; /* Center-align the text */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Grid container for Mission and Vision sections */
+.MissionVisionGrid {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: 1fr 3fr; /* Adjust column ratio for terms and definitions */
+    gap: 20px 10px; /* Add spacing between rows and columns */
+    padding: 30px 20px; /* Add padding inside the grid */
+    margin: 0 auto; /* Center the grid horizontally */
+    max-width: 50vw; /* Restrict width for larger screens */
+    width: fit-content; /* Adjust width to fit content */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.Mission {
+  grid-column: 1;
+  grid-row: 1;
+  color: rgb(255, 84, 146);
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.MissionDefination {
+  grid-column: 2;
+  grid-row: 1;
+  color: #35abec;
+  font-size: 15px;
+}
+
+.Vision {
+  grid-column: 1;
+  grid-row: 2;
+  color: rgb(125, 227, 99);
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.VisionDefination {
+  grid-column: 2;
+  grid-row: 2;
+  color: #35abec;
+  font-size: 15px;
+}
+/* 
+    Container for the slideshow.
+    Takes full screen width, reduced height, centers slides both vertically and horizontally,
+    and hides overflow to prevent slides from spilling out.
+*/
+.slideshow-container {
+    width: 100%;
+    height: 45vh; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 
+    Each slide is absolutely positioned, hidden by default (opacity: 0),
+    and uses a fade transition. Slides are centered and styled for readability.
+*/
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Invisible by default */
+    transition: opacity 1s ease-in-out; /* Fade transition */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    pointer-events: none; /* Prevent interaction when invisible */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+    The active slide is visible (opacity: 1) and interactive.
+*/
+.slide.active {
+    opacity: 1; /* Show active slide */
+    pointer-events: auto;
+}
+
+/* 
+    Testimonial text styling.
+    Displayed as a block with spacing below.
+*/
+#testimonial {
+        display: block;
+        margin-bottom: 8px;
+        /* Optional: add more styling as needed */
+}
+
+/* 
+    Author text styling.
+    Displayed as a block and centered.
+*/
+#author {
+        display: block;
+        text-align: center;
+}
+
+/* 
+    Unique background colors for each slide using nth-child selector.
+    Each slide gets a different color for visual distinction.
+*/
+.slide:nth-child(1) { background-color: rgb(128, 154, 215); }  /* Coral Red */
+.slide:nth-child(2) { background-color: rgb(133, 188, 218); }  /* Purple */
+.slide:nth-child(3) { background-color: rgb(247, 163, 194); }  /* Green */
+.slide:nth-child(4) { background-color: rgb(224, 159, 94); }  /* Orange */
+.slide:nth-child(5) { background-color: rgb(165, 174, 139); }  /* Aqua Blue */
+.slide:nth-child(6) { background-color: rgb(135, 112, 96); }  /* Orchid Purple */
+
+/* 
+    Navigation buttons container.
+    Absolutely positioned to cover the slideshow, aligns buttons to left and right,
+    and centers them vertically.
+*/
+.nav-buttons {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* 
+    General button styling.
+    No border, rounded corners, pointer cursor, and padding.
+*/
+button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    ;
+}
+
+/* 
+    Specific styling for previous and next navigation buttons.
+    Removes background and box shadow, increases font size for icons,
+    and adds color and padding.
+*/
+#prevBtn, #nextBtn {
+    background: none;
+    box-shadow: none;
+    border: none;
+    font-size: 3em;
+    color: rgb(250, 250, 250);
+    border-radius: 0;
+    padding: 0 20px;
+    transition: color 0.2s;
+}
+
+/* 
+    Hover effect for navigation buttons.
+    Changes color to highlight on hover.
+*/
+#prevBtn:hover, #nextBtn:hover {
+    color: #ff758c;
+    background: none;
+}
+
+/* 
+    Hover effect for all buttons.
+    Slightly darkens background on hover for feedback.
+*/
+button:hover {
+    background-color: rgba(255,255,255,0.9);
+}
+
+/* 
+    Dots container for slide indicators.
+    Absolutely positioned at the bottom, centers dots horizontally, and adds spacing.
+*/
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* 
+    Individual dot styling.
+    Large clickable dots, white color, with scaling animation on hover.
+*/
+.dot {
+    font-size: 24px;
+    cursor: pointer;
+    color: white; /* Make the dots white */
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+/* 
+    Dot hover effect.
+    Enlarges the dot for feedback.
+*/
+.dot:hover {
+    transform: scale(1.3);
+}
+
+/* 
+    Active dot styling.
+    Keeps the active dot white (could be customized for more feedback).
+*/
+.dot.active {
+    color: white;
+}
+#follow{
+    color:rgb(245, 201, 26);
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+ #line{
+  border: none;
+  height: 1px;
+  background-color: rgb(88, 125, 214);
+  margin-left: 30px;
+  margin-right: 30px;
+ }
 /* ============================= */
 /* Responsive Rules (Mobile View) */
 /* ============================= */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
         display: none; /* Initially hidden */
@@ -255,14 +532,17 @@ header {
         position: relative;
         top: 7px;
     }
+
     .burger.open div:nth-child(2) {
         opacity: 0; /* Hide middle bar */
     }
+
     .burger.open div:nth-child(3) {
         transform: rotate(-45deg); /* Rotate third bar */
         position: relative;
         top: -7px;
     }
+
     .logo {
         width: 190px; /* Smaller width for mobile */
         height: auto; /* Maintain aspect ratio */
@@ -274,13 +554,6 @@ header {
         left: 10px; /* Adjust position for smaller screens */
         padding: 8px 16px; /* Reduce padding */
         font-size: 14px; /* Reduce font size */
-    }
-
-    .logo {
-        width: 190px; /* Smaller width for mobile */
-        height: auto; /* Maintain aspect ratio */
-        margin: 20px auto; /* Add spacing */
-        margin-bottom: 20px; /* Add spacing below the logo */
     }
 
     .headingText {
@@ -299,10 +572,139 @@ header {
         margin-bottom: 20px; /* Ensure consistent spacing between divs */
     }
 
-    .text-box {
-        width: 80%; /* Reduce width for smaller screens */
-        max-width: 350px; /* Adjust maximum width for smaller screens */
-        padding: 25px; /* Adjust padding for better fit */
-        font-size: 20px; /* Slightly reduce font size for smaller screens */
+    .background-container {
+        background-size: contain; /* Ensure the entire image is visible */
+        background-position: center; /* Keep the image centered */
+        height: auto; /* Allow height to adjust dynamically */
+        .text-box {
+            font-size: 13px; /* Ensure text resizes properly */
+            width: 90%; /* Keep width smaller for smaller screens */
+            max-width: 350px; /* Limit maximum width */
+            padding: 2px; /* Reduce padding to the minimum */
+            height: auto; /* Allow height to adjust dynamically */
+            word-wrap: break-word; /* Ensure long words break to fit inside */
+            white-space: pre-wrap; /* Preserve line breaks and wrap text */
+            overflow-wrap: break-word; /* Break long words to fit inside */
+            align-self: center;
+            padding-top: 0; /* Remove extra padding at the top */
+            padding-bottom: 0; /* Remove extra padding at the bottom */
+        }
+    }
+
+    .text-box h2 {
+        text-align: center; /* Center-align the heading */
+        margin-bottom: 0px; /* Reduce the space below the heading */
+    }
+
+    .text-box p, .text-box pre {
+        font-size: 15px; /* Ensure text remains readable */
+        text-align: center;
+    }
+
+    #founding-story {
+        margin-bottom: 5px; /* Reduce the gap below the element */
+    }
+
+    #CommunnityIntro {
+        font-size: 22px; /* Reduce font size for smaller screens */
+        width: 75vw; /* Ensure the text fits in one line */
+        white-space: nowrap; /* Prevent text from wrapping */
+        margin: 0 auto; /* Center the text horizontally */
+        text-align: center; /* Ensure the text is centered */
+    }
+
+    #Communnity {
+        font-size: 15px; /* Reduce font size for readability */
+        width: 90%; /* Increase width for better layout */
+        line-height: 1.3; /* Adjust line height for spacing */
+    }
+
+    .Mission {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center; /* Center-align the text */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .MissionDefination {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .Vision {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: center; /* Center-align the text */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .VisionDefination {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .MissionVisionGrid {
+        display: grid; /* Use CSS Grid layout */
+        grid-template-columns: 1fr; /* Stack terms and definitions vertically */
+        gap: 20px; /* Add spacing between rows */
+        padding: 15px; /* Adjust padding for smaller screens */
+        width: 100%; /* Use full width for smaller screens */
+        margin: 0 auto; /* Center the grid horizontally */
+        max-width: 90vw; /* Restrict width for smaller screens */
+    }
+
+    .Mission, .Vision {
+        grid-column: 1; /* Ensure terms span the full width */
+        text-align: center; /* Center-align the text */
+        font-size: 30px; /* Adjust font size for smaller screens */
+        margin-bottom: 10px; /* Add spacing below the term */
+    }
+
+    .MissionDefination, .VisionDefination {
+        grid-column: 1; /* Ensure definitions span the full width */
+        text-align: left; /* Align definitions to the left */
+        font-size: 14px; /* Adjust font size for readability */
+        margin-top: 0; /* Remove extra spacing above the definition */
+    }
+
+    .slideshow-container {
+        height: 28vh; /* Smaller height for mobile */
+        padding: 0;
+        width: auto;
+        max-width: 100%;
+    }
+    .slide {
+        font-size: 15px;
+        padding: 8px;
+    }
+    #testimonial {
+        font-size: 13px;
+        max-width: 40%; /* Limit width for smaller screens */
+    }
+    #author {
+        font-size: 12px;
+    }
+    .nav-buttons {
+        padding: 0 10px;
+    }
+    #prevBtn, #nextBtn {
+        font-size: 2em;
+        padding: 0 10px;
+    }
+    .dots-container {
+        bottom: 2px; /* Move dots further down */
+        gap: 2px;    /* Smaller gap between dots */
+    }
+    .dot {
+        font-size: 8px; /* Make dots smaller */
+    }
+    .dot {
+        font-size: 18px;
+    }
+    #follow {
+        font-size: 22px;
+        margin-top: 15px;
+        margin-left: 10px;
+        text-align: left;
     }
 }
