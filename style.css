@@ -381,6 +381,7 @@ button {
     ;
 }
 
+
 /* 
     Specific styling for previous and next navigation buttons.
     Removes background and box shadow, increases font size for icons,
@@ -471,6 +472,40 @@ button:hover {
 /* ============================= */
 /* Responsive Rules (Mobile View) */
 /* ============================= */
+
+#Instagram{
+    font-size: 30px;
+    color: rgb(88, 125, 214);
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+#InstaButton {
+    position: relative;
+    margin: 20px auto;
+    padding: 22.5px 45px;
+    font-size: 22px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #7ed0ff, #ff758c);
+    transition: all 0.3s ease;
+    text-align: center;
+    color: rgb(255, 253, 249);
+    text-decoration: none;
+    display: block; /* Changed from inline-block to block for centering */
+    width: fit-content; /* Ensures button width fits content */
+}
+#InstaButton:hover {
+    background: linear-gradient(135deg, #ff758c, #7ed0ff); /* Reverse the gradient on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+}
+#lineEnding{
+    border: none;
+  height: 1px;
+  background-color: rgb(88, 125, 214);
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 75px;  
+}
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -706,5 +741,32 @@ button:hover {
         margin-top: 15px;
         margin-left: 10px;
         text-align: left;
+    }
+
+    #line {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #Instagram {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    #InstaButton {
+        font-size: 11px;
+        padding: 12px 20px;
+        margin: 15px auto;
+        width: 15vw;
+    }
+
+    #InstaButton:hover {
+        background: linear-gradient(135deg, #ff758c, #7ed0ff);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #lineEnding {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
     }
 }
