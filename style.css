@@ -250,7 +250,7 @@ header {
   grid-column: 1;
   grid-row: 1;
   color: rgb(255, 84, 146);
-  font-size: 40px;
+  font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -265,7 +265,7 @@ header {
   grid-column: 1;
   grid-row: 2;
   color: rgb(125, 227, 99);
-  font-size: 40px;
+  font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -506,6 +506,152 @@ button:hover {
   margin-right: 30px;
   margin-top: 75px;  
 }
+.footer {
+    margin-left: 30px;
+}
+
+.brand {
+    font-size: 35px;
+    color: rgb(88, 125, 214);
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    margin-right: 15px; /* space between the two */
+}
+
+.email {
+    font-size: 15px;
+    font-family: 'Times New Roman', serif;
+    color: rgb(88, 125, 214);
+    margin-left: 900px;
+}
+.Instagram{
+    font-size: 15px;
+    font-family: 'Times New Roman', serif;
+    color: rgb(88, 125, 214);
+    margin-left: 100px;
+}
+/* The CSS for the bussinessPlan.html */
+
+
+.bussinessPlanContainer {
+  width: 80vw;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+    display: flex;
+
+}
+
+.bussinessPlanHeading {
+    margin-top: 30px;
+    font-size: 50px;
+    color: rgb(88, 125, 214);
+    font-family: 'Times New Roman', serif;
+    text-align: center; /* space between the two */
+      width: 100%; /* Ensures heading spans the container */
+  margin-bottom: 30px; 
+}
+
+.Intro {
+  font-size: 16px;
+  margin-bottom: 25px;
+  text-align: center;
+    color: rgb(88, 125, 214);
+    margin-bottom: 30px; /* space between the two */
+
+}
+
+.bussinessGrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px 10px;
+  max-width: 50vw;
+  width: fit-content;
+  box-sizing: border-box;
+    margin: 0 auto; /* This centers the grid if not using flex on parent */
+
+}
+
+.BusinessConcept, .targetMarket, .competitiveAdvantage, .pricingStrategy {
+  font-size: 24px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.BusinessConcept { color:rgb(61, 155, 233); }
+.targetMarket  { color: rgb(255, 84, 146); }
+.competitiveAdvantage    { color:rgb(104, 189, 83); }
+.pricingStrategy  { color: rgb(213, 139, 0); }
+
+.elaboration {
+  color: rgb(125, 138, 214);
+  font-size: 15px;
+}
+/* The CSS for the menu.html */
+#meunImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 100%;
+}
+#meunImage img {
+    max-width: 95%;
+    height: auto;
+    display: block;
+}
+.menuIntro{
+    color: rgb(88, 125, 214); /* Set the text color */
+    font-size: 55px; /* Set font size */
+    font-family: 'Playfair Display', serif;
+    margin: 60px 0; /* Add top and bottom margin */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    display: block; /* Make it a block-level element */
+    text-align: center; /* Center-align the text */
+}
+.menutext{
+      font-size: 16px;
+  text-align: center;
+    color: rgb(88, 125, 214);
+    margin-bottom: 30px; /* space between the two */
+}
+.menuGrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 15px 10px;
+  max-width: 50vw;
+  width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.menuGrid .sectionTitle {
+  grid-column: 1 / span 2; /* span across both columns */
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(88, 125, 214);
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+.menuName {
+  grid-column: 1;          /* always in first column */
+  font-size: 24px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;               /* reset margin */
+  padding: 0;              /* reset padding */
+  color: rgb(88, 125, 214); /* default color (can be overridden inline or with classes) */
+}
+
+.menuDetails {
+  color: rgb(125, 138, 214);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -769,4 +915,114 @@ button:hover {
         margin-right: 10px;
         margin-top: 20px;
     }
+.footer {
+    margin-left: 10px;
+}
+.bussinessPlanHeading{
+    font-size: 25px;
+}
+.Intro{
+    font-size:15px;
+}
+.brand {
+    font-size: 20px;
+    color: rgb(88, 125, 214);
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 8px;
+    font-family: 'Times New Roman', serif;
+    color: rgb(88, 125, 214);
+    margin-left: 100px
+}
+
+.Instagram{
+    font-size: 8px;
+    margin-left: 300px;
+}
+
+/* The CSS for the bussinessPlan.html */
+  .bussinessGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 90vw;
+  }
+
+  .BusinessConcept,
+  .targetMarket,
+  .competitiveAdvantage,
+  .pricingStrategy {
+    grid-column: 1;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .elaboration {
+    grid-column: 1;
+    text-align: left;
+    font-size: 14px;
+    margin-top: 0;
+  }
+/* The CSS for the menu.html */
+
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+    max-width: 90vw;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .menuName {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .menuDetails {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .menuGrid .seasonalTitle,
+  .menuGrid .seasonalText {
+    grid-column: 1;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .menutext{
+    max-width: 95vw;
+  }
+  #meunImage {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  #meunImage img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menuIntro {
+    font-size: 36px; /* reduce heading size for smaller screens */
+    margin: 40px 0 15px;
+    padding: 0 10px;
+  }
+
+  .menutext {
+    font-size: 14px; /* slightly smaller body text */
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+
+
 }

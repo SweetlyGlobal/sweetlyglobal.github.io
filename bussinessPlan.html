@@ -1,3 +1,75 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declare the document type and set the language to English -->
+<html lang="en"> <!-- Set the language to English -->
+<head>
+    <!-- Set character encoding -->
+    <meta charset="UTF-8"> <!-- Specify the character encoding for the document -->
+    <!-- Make site mobile-responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure proper scaling on mobile devices -->
+    <title>Sweetly Global Website</title> <!-- Set the title of the webpage -->
 
-Hello world
+    <link rel="manifest" href="manifest.json"> <!-- Link to the web app manifest file -->
+    <meta name="theme-color" content="#317EFB"/> <!-- Set the theme color for the browser -->
+
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+
+<!-- ============================= -->
+<!-- Header: Navbar and Burger Icon -->
+<!-- ============================= -->
+
+<header>
+    <div class="navbar"> <!-- Navbar container -->
+        <a href="index.html" >Home</a> <!-- Link to the home page -->
+        <a href="bussinessPlan.html" >Business Plan</a> <!-- Link to the business plan section -->
+        <a href="menu.html" >Menu</a> <!-- Link to the menu section -->
+        <a href="#about-us" >About Us</a> <!-- Link to the about us section -->
+    </div>
+
+    <div class="burger" onclick="toggleMenu()"> <!-- Burger menu for mobile view -->
+        <div></div> <!-- First bar of the burger -->
+        <div></div> <!-- Second bar of the burger -->
+        <div></div> <!-- Third bar of the burger -->
+    </div>
+</header>
+
+<div class="body-content">
+    <button id="installButton" class="button-style" style="display: none;">Install App</button> <!-- Button to install the app -->
+</div>
+<div class="bussinessPlanContainer">
+  <div class="bussinessPlanHeading">Business Plan Overview</div>
+  <div class="Intro">This section outlines the key elements of our business model and strategy.</div>
+
+  <div class="bussinessGrid">
+    <div class="BusinessConcept">Business Concept</div>
+    <div class="elaboration">We aim to provide personalized digital education to underserved communities using AI-powered tools.</div>
+
+    <div class="targetMarket">Target Market</div>
+    <div class="elaboration">Our primary audience includes students aged 13–18 in developing regions who lack access to quality STEM education.</div>
+
+    <div class="competitiveAdvantage">Competitive Advantage</div>
+    <div class="elaboration">Unlike competitors, we use adaptive learning paths powered by real-time performance tracking.</div>
+
+    <div class="pricingStrategy">Pricing Strategy</div>
+    <div class="elaboration">We offer a freemium model with premium features available for institutions and sponsors at affordable rates.</div>
+  </div>
+</div>
+
+
+
+</body>
+
+<footer style="margin: 300px 0 0 0;">
+    <div class="footer">
+        <hr id="lineEnding">
+        <span class="brand">Sweetly Global</span>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFqxDPBGRXTpDCbgvNtHJqRGhQBcLBNvxBBjpmKtkhxtswggzmGxKJPzthvglMxvBMGmxH" target="_blank">
+            <span class="email">sweetlyglobal@gmail.com </span>
+        </a>
+        <a href="https://www.instagram.com/sweetly.global/" target="_blank">
+            <span class="Instagram">Instagram</span>
+        </a>
+    </div>
+</footer>
+<script src="main.js"></script>
+</html>
