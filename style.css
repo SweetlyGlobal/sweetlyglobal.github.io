@@ -650,8 +650,64 @@ button:hover {
   font-size: 15px;
   line-height: 1.4;
 }
+/* The CSS for the about.html */
 
+.team{
+    color: rgb(88, 125, 214); /* Set the text color */
+    font-size: 55px; /* Set font size */
+    font-family: 'Playfair Display', serif;
+    display: block; /* Make it a block-level element */
+    text-align: center; /* Center-align the text */
+}
+#BusinessBackgrounds{
+    color: rgb(88, 125, 214); /* Set the text color */
+    font-size: 20px; /* Set font size */
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add spacing below the heading */
+    display: block; /* Make it a block-level element */
+    text-align: center; /* Center-align the text */
+}
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop/tablet */
+  gap: 20px;
+}
 
+.team-member {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px;
+  align-items: center;
+  background-color: #ffe5cc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.person-image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color:rgb(255, 87, 146);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 5px 0;
+  color:rgb(92, 128, 214);
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0;
+}
 @media (max-width: 480px) {
     /* Navbar container for mobile */
     .navbar {
@@ -1022,7 +1078,21 @@ button:hover {
     padding: 0 15px;
     margin-bottom: 20px;
   }
+/* The CSS for the about.html */
 
+  .team-container {
+    grid-template-columns: 1fr;
+  }
 
+  .team-member {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .person-image {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
 
 }
